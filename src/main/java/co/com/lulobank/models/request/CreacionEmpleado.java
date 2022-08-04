@@ -3,7 +3,7 @@ package co.com.lulobank.models.request;
 import lombok.Data;
 
 @Data
-public class Empleado {
+public class CreacionEmpleado {
     private String name;
     private String salary;
     private String age;

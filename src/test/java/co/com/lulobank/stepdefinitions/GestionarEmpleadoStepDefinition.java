@@ -1,7 +1,7 @@
 package co.com.lulobank.stepdefinitions;
 
 import co.com.lulobank.exceptions.EmpleadoException;
-import co.com.lulobank.models.request.Empleado;
+import co.com.lulobank.models.request.CreacionEmpleado;
 import co.com.lulobank.models.response.DataConsultarEmpleado;
 import co.com.lulobank.models.response.DataConsultarEmpleados;
 import co.com.lulobank.models.response.DataCrear;
@@ -25,7 +25,7 @@ import static co.com.lulobank.tasks.Consultar.consultarEmpleado;
 import static co.com.lulobank.tasks.Crear.crearEmpleado;
 import static co.com.lulobank.tasks.Eliminar.eliminarEmpleado;
 import static co.com.lulobank.utils.DatosGenerales.*;
-import static co.com.lulobank.utils.GenerarDatos.GenerarDatosEmpleado;
+import static co.com.lulobank.utils.GeneracionDatos.generarDatosEmpleado;
 import static java.lang.Integer.parseInt;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
@@ -33,7 +33,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class GestionarEmpleadoStepDefinition {
 
-    private Empleado empleadoModel;
+    private CreacionEmpleado empleadoModel;
     private final Gson gson = new Gson();
     private String idEmpleado;
     private final HashMap<String, Object> headers = new HashMap<>();
@@ -41,7 +41,7 @@ public class GestionarEmpleadoStepDefinition {
 
     @Dado("que obtengo los datos del empleado")
     public void ObtengoDatosDelEmpleado() {
-        empleadoModel = GenerarDatosEmpleado();
+        empleadoModel = generarDatosEmpleado();
         headers.put("Content-Type", "application/json");
         actor.can(CallAnApi.at(URL_BASE));
     }

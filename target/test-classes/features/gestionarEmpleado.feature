@@ -17,11 +17,16 @@ Característica: Gestionar los empleados
     Entonces el status code es '200'
     Y es encuentran '24' registros
 
-  Escenario: Consultar un empleado registrado
-    Dado que requiero consultar un empleado con ID '1'
+  Esquema del escenario: Consultar un empleado registrado
+    Dado que requiero consultar un empleado con ID '<id>'
     Cuando consumo el servicio para realizar la consulta
     Entonces el status code es '200'
-    Y el nombre de empleado es 'Tiger Nixon'
+    Y el nombre de empleado es '<nombreEmpleado>'
+
+    Ejemplos:
+      |id|nombreEmpleado    |
+      |1 |Tiger Nixon       |
+      |6 |Brielle Williamson|
 
   Escenario: Eliminar registro empleado
     Dado que requiero eliminar un empleado con ID '2'

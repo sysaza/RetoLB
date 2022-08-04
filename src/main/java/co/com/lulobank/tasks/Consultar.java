@@ -4,7 +4,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Get;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Consultar implements Task {
@@ -17,7 +16,7 @@ public class Consultar implements Task {
         return this;
     }
 
-    public Consultar conHeader(HashMap<String, Object> headers) {
+    public Consultar conHeader(Map<String, Object> headers) {
         this.headers = headers;
         return this;
     }

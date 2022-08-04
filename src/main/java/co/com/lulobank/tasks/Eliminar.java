@@ -4,7 +4,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Delete;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Eliminar implements Task {
@@ -16,7 +15,7 @@ public class Eliminar implements Task {
         return this;
     }
 
-    public Eliminar conHeader(HashMap<String, Object> headers) {
+    public Eliminar conHeader(Map<String, Object> headers) {
         this.headers = headers;
         return this;
     }
